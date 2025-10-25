@@ -1,0 +1,9 @@
+# Nixpacks configuration for Next.js Frontend
+[build]
+cmd = "npm install && npm run build"
+
+[start]
+cmd = "npm start"
+
+[variables]
+NODE_VERSION = "18"

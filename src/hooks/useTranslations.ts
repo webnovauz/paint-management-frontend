@@ -1,0 +1,430 @@
+import { useTranslation } from 'react-i18next';
+
+export const useAppTranslation = () => {
+  const { t, i18n } = useTranslation();
+  
+  return {
+    t,
+    changeLanguage: i18n.changeLanguage,
+    currentLanguage: i18n.language,
+    languages: [
+      { code: 'ru', name: 'Русский', flag: '🇷🇺' },
+      { code: 'uz', name: "O'zbek", flag: '🇺🇿' },
+      { code: 'en', name: 'English', flag: '🇺🇸' },
+    ]
+  };
+};
+
+// Вспомогательные функции для быстрого доступа к переводам
+export const useNavTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    dashboard: t('nav.dashboard'),
+    sales: t('nav.sales'),
+    products: t('nav.products'),
+    customers: t('nav.customers'),
+    inventory: t('nav.inventory'),
+    suppliers: t('nav.suppliers'),
+    debts: t('nav.debts'),
+    analytics: t('nav.analytics'),
+  };
+};
+
+export const useSalesTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('sales.title'),
+    subtitle: t('sales.subtitle'),
+    selectProduct: t('sales.selectProduct'),
+    customerInfo: t('sales.customerInfo'),
+    selectCustomer: t('sales.selectCustomer'),
+    newCustomer: t('sales.newCustomer'),
+    customerName: t('sales.customerName'),
+    customerPhone: t('sales.customerPhone'),
+    paymentType: t('sales.paymentType'),
+    paymentAmount: t('sales.paymentAmount'),
+    cash: t('sales.cash'),
+    transfer: t('sales.transfer'),
+    card: t('sales.card'),
+    debtPayment: t('sales.debtPayment'),
+    createSale: t('sales.createSale'),
+    addToSale: t('sales.addToSale'),
+    saleItems: t('sales.saleItems'),
+    noItems: t('sales.noItems'),
+    selectProductDesc: t('sales.selectProductDesc'),
+    orderTotal: t('sales.orderTotal'),
+    paid: t('sales.paid'),
+    debt: t('sales.debt'),
+    clear: t('sales.clear'),
+    available: t('sales.available'),
+    unitPrice: t('sales.unitPrice'),
+    total: t('sales.total'),
+    notes: t('sales.notes'),
+    additionalInfo: t('sales.additionalInfo'),
+    enterName: t('sales.enterName'),
+    phoneFormat: t('sales.phoneFormat'),
+    leaveEmptyForFull: t('sales.leaveEmptyForFull'),
+    notSpecifiedForFull: t('sales.notSpecifiedForFull'),
+    creating: t('sales.creating'),
+  };
+};
+
+export const useProductTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('products.title'),
+    subtitle: t('products.subtitle'),
+    addProduct: t('products.addProduct'),
+    editProduct: t('products.editProduct'),
+    category: t('products.category'),
+    brand: t('products.brand'),
+    color: t('products.color'),
+    unit: t('products.unit'),
+    costPrice: t('products.costPrice'),
+    sellingPrice: t('products.sellingPrice'),
+    currentStock: t('products.currentStock'),
+    productType: t('products.productType'),
+    piece: t('products.piece'),
+    measured: t('products.measured'),
+    volume: t('products.volume'),
+    lowStock: t('products.lowStock'),
+    outOfStock: t('products.outOfStock'),
+    available: t('products.available'),
+    search: t('products.search'),
+    filter: t('products.filter'),
+    all: t('products.all'),
+    active: t('products.active'),
+    inactive: t('products.inactive'),
+    allCategories: t('products.allCategories'),
+    loading: t('products.loading'),
+    notFound: t('products.notFound'),
+    product: t('products.product'),
+    price: t('products.price'),
+    margin: t('products.margin'),
+    type: t('products.type'),
+    stock: t('products.stock'),
+    actions: t('products.actions'),
+    refresh: t('products.refresh'),
+    deleteConfirm: t('products.deleteConfirm'),
+  };
+};
+
+export const useDashboardTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('dashboard.title'),
+    subtitle: t('dashboard.subtitle'),
+    totalProducts: t('dashboard.totalProducts'),
+    lowStock: t('dashboard.lowStock'),
+    todaySales: t('dashboard.todaySales'),
+    todayRevenue: t('dashboard.todayRevenue'),
+    todayProfit: t('dashboard.todayProfit'),
+    customerManagement: t('dashboard.customerManagement'),
+    customerManagementDesc: t('dashboard.customerManagementDesc'),
+    manageCustomers: t('dashboard.manageCustomers'),
+    manageDebts: t('dashboard.manageDebts'),
+    financialSummary: t('dashboard.financialSummary'),
+    stockValue: t('dashboard.stockValue'),
+    todayRevenueLabel: t('dashboard.todayRevenueLabel'),
+    briefStats: t('dashboard.briefStats'),
+    activeProducts: t('dashboard.activeProducts'),
+    needRestock: t('dashboard.needRestock'),
+    dailySales: t('dashboard.dailySales'),
+  };
+};
+
+export const useCommonTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    loading: t('common.loading'),
+    save: t('common.save'),
+    cancel: t('common.cancel'),
+    delete: t('common.delete'),
+    edit: t('common.edit'),
+    add: t('common.add'),
+    search: t('common.search'),
+    actions: t('common.actions'),
+    name: t('common.name'),
+    price: t('common.price'),
+    quantity: t('common.quantity'),
+    total: t('common.total'),
+    date: t('common.date'),
+    notes: t('common.notes'),
+    loadingStock: t('common.loadingStock'),
+    loadingCustomers: t('common.loadingCustomers'),
+    loadingDebts: t('common.loadingDebts'),
+  };
+};
+
+export const useInventoryTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('inventory.title'),
+    subtitle: t('inventory.subtitle'),
+    stockAdjustment: t('inventory.stockAdjustment'),
+    currentStock: t('inventory.currentStock'),
+    newQuantity: t('inventory.newQuantity'),
+    adjustmentNotes: t('inventory.adjustmentNotes'),
+    reason: t('inventory.reason'),
+    save: t('inventory.save'),
+    cancel: t('inventory.cancel'),
+    stockMovements: t('inventory.stockMovements'),
+    noMovements: t('inventory.noMovements'),
+    movement: t('inventory.movement'),
+    inbound: t('inventory.inbound'),
+    outbound: t('inventory.outbound'),
+    adjustment: t('inventory.adjustment'),
+    quantity: t('inventory.quantity'),
+    date: t('inventory.date'),
+    notes: t('inventory.notes'),
+    searchPlaceholder: t('inventory.searchPlaceholder'),
+    adjustStock: t('inventory.adjustStock'),
+    enterValidNumber: t('inventory.enterValidNumber'),
+    quantityCannotBeNegative: t('inventory.quantityCannotBeNegative'),
+    adjustmentSuccess: t('inventory.adjustmentSuccess'),
+    adjustmentError: t('inventory.adjustmentError'),
+    adjustmentReason: t('inventory.adjustmentReason'),
+    totalProducts: t('inventory.totalProducts'),
+    lowStock: t('inventory.lowStock'),
+    outOfStock: t('inventory.outOfStock'),
+    totalValue: t('inventory.totalValue'),
+    enterNewQuantity: t('inventory.enterNewQuantity'),
+    specifyReason: t('inventory.specifyReason'),
+    stockTable: t('inventory.stockTable'),
+    product: t('inventory.product'),
+    currentStockCol: t('inventory.currentStockCol'),
+    minStock: t('inventory.minStock'),
+    status: t('inventory.status'),
+    value: t('inventory.value'),
+    saving: t('inventory.saving'),
+    allTypes: t('inventory.allTypes'),
+    replenishment: t('inventory.replenishment'),
+    sale: t('inventory.sale'),
+    dateFrom: t('inventory.dateFrom'),
+  };
+};
+
+export const useCustomerTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('customers.title'),
+    subtitle: t('customers.subtitle'),
+    addCustomer: t('customers.addCustomer'),
+    editCustomer: t('customers.editCustomer'),
+    name: t('customers.name'),
+    phone: t('customers.phone'),
+    email: t('customers.email'),
+    address: t('customers.address'),
+    balance: t('customers.balance'),
+    debt: t('customers.debt'),
+    prepayment: t('customers.prepayment'),
+    totalCustomers: t('customers.totalCustomers'),
+    debtors: t('customers.debtors'),
+    totalDebt: t('customers.totalDebt'),
+    totalPrepayment: t('customers.totalPrepayment'),
+    allCustomers: t('customers.allCustomers'),
+    withDebt: t('customers.withDebt'),
+    withPrepayment: t('customers.withPrepayment'),
+    client: t('customers.client'),
+    contacts: t('customers.contacts'),
+    statistics: t('customers.statistics'),
+    actions: t('customers.actions'),
+    purchases: t('customers.purchases'),
+    onAmount: t('customers.onAmount'),
+    searchPlaceholder: t('customers.searchPlaceholder'),
+    noCustomers: t('customers.noCustomers'),
+    loading: t('customers.loading'),
+    deleteConfirm: t('customers.deleteConfirm'),
+    save: t('customers.save'),
+    cancel: t('customers.cancel'),
+    required: t('customers.required'),
+  };
+};
+
+export const useDebtTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('debt.title'),
+    subtitle: t('debt.subtitle'),
+    debtors: t('debt.debtors'),
+    totalDebt: t('debt.totalDebt'),
+    paymentsToday: t('debt.paymentsToday'),
+    incomeToday: t('debt.incomeToday'),
+    addPayment: t('debt.addPayment'),
+    recordPayment: t('debt.recordPayment'),
+    customerName: t('debt.customerName'),
+    amount: t('debt.amount'),
+    paymentType: t('debt.paymentType'),
+    notes: t('debt.notes'),
+    cash: t('debt.cash'),
+    transfer: t('debt.transfer'),
+    card: t('debt.card'),
+    save: t('debt.save'),
+    cancel: t('debt.cancel'),
+    noDebtors: t('debt.noDebtors'),
+    allClientsSettled: t('debt.allClientsSettled'),
+    recentPayments: t('debt.recentPayments'),
+    noPayments: t('debt.noPayments'),
+    customer: t('debt.customer'),
+    debt: t('debt.debt'),
+    phone: t('debt.phone'),
+    actions: t('debt.actions'),
+    paymentStats: t('debt.paymentStats'),
+    payments: t('debt.payments'),
+    on: t('debt.on'),
+    payment: t('debt.payment'),
+    date: t('debt.date'),
+    type: t('debt.type'),
+    enterAmount: t('debt.enterAmount'),
+    optionalNotes: t('debt.optionalNotes'),
+    deleteConfirm: t('debt.deleteConfirm'),
+    loading: t('debt.loading'),
+    purchases: t('debt.purchases'),
+    loadingDebtors: t('debt.loadingDebtors'),
+    loadingPayments: t('debt.loadingPayments'),
+  };
+};
+
+export const useAnalyticsTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    title: t('analytics.title'),
+    subtitle: t('analytics.subtitle'),
+    totalStockValue: t('analytics.totalStockValue'),
+    salesForPeriod: t('analytics.salesForPeriod'),
+    lowStockItems: t('analytics.lowStockItems'),
+    totalProducts: t('analytics.totalProducts'),
+    averageMargin: t('analytics.averageMargin'),
+    excellent: t('analytics.excellent'),
+    lowStockPaints: t('analytics.lowStockPaints'),
+    minimumStock: t('analytics.minimumStock'),
+    min: t('analytics.min'),
+    salesForDate: t('analytics.salesForDate'),
+    reportPeriod: t('analytics.reportPeriod'),
+    startDate: t('analytics.startDate'),
+    endDate: t('analytics.endDate'),
+    reportForPeriod: t('analytics.reportForPeriod'),
+    generate: t('analytics.generate'),
+    exportExcel: t('analytics.exportExcel'),
+    quickActions: t('analytics.quickActions'),
+    managePaints: t('analytics.managePaints'),
+    addEditProducts: t('analytics.addEditProducts'),
+    newSale: t('analytics.newSale'),
+    createNewSale: t('analytics.createNewSale'),
+    excelReport: t('analytics.excelReport'),
+    createExcelFile: t('analytics.createExcelFile'),
+    today: t('analytics.today'),
+    requiresAttention: t('analytics.requiresAttention'),
+    allGood: t('analytics.allGood'),
+    inStock: t('analytics.inStock'),
+    good: t('analytics.good'),
+    low: t('analytics.low'),
+    allPaintsGood: t('analytics.allPaintsGood'),
+    andMore: t('analytics.andMore'),
+    paints: t('analytics.paints'),
+    sales: t('analytics.sales'),
+    // Customer stats
+    customerStats: t('analytics.customerStats'),
+    totalCustomers: t('analytics.totalCustomers'),
+    totalSales: t('analytics.totalSales'),
+    averageCustomerValue: t('analytics.averageCustomerValue'),
+    topCustomers: t('analytics.topCustomers'),
+    detailedStats: t('analytics.detailedStats'),
+    customer: t('analytics.customer'),
+    phone: t('analytics.phone'),
+    totalAmount: t('analytics.totalAmount'),
+    ordersCount: t('analytics.ordersCount'),
+    averageOrder: t('analytics.averageOrder'),
+    lastPurchase: t('analytics.lastPurchase'),
+    salesPercentage: t('analytics.salesPercentage'),
+    rank: t('analytics.rank'),
+    noCustomerData: t('analytics.noCustomerData'),
+    orders: t('analytics.orders'),
+    // Tabs
+    overview: t('analytics.overview'),
+    salesHistory: t('analytics.salesHistory'),
+    productStats: t('analytics.productStats'),
+    // Product Stats
+    productStatsTitle: t('analytics.productStatsTitle'),
+    productAnalysis: t('analytics.productAnalysis'),
+    totalRevenue: t('analytics.totalRevenue'),
+    totalQuantitySold: t('analytics.totalQuantitySold'),
+    totalTransactions: t('analytics.totalTransactions'),
+    detailedProductStats: t('analytics.detailedProductStats'),
+    product: t('analytics.product'),
+    quantitySold: t('analytics.quantitySold'),
+    revenue: t('analytics.revenue'),
+    averagePrice: t('analytics.averagePrice'),
+    salesCount: t('analytics.salesCount'),
+    percentage: t('analytics.percentage'),
+    noProductData: t('analytics.noProductData'),
+    // Sales History
+    salesHistoryTitle: t('analytics.salesHistoryTitle'),
+    salesHistoryDescription: t('analytics.salesHistoryDescription'),
+    filters: t('analytics.filters'),
+    searchPlaceholder: t('analytics.searchPlaceholder'),
+    allProducts: t('analytics.allProducts'),
+    allCustomers: t('analytics.allCustomers'),
+    date: t('analytics.date'),
+    productName: t('analytics.productName'),
+    customerName: t('analytics.customerName'),
+    quantity: t('analytics.quantity'),
+    unitPrice: t('analytics.unitPrice'),
+    totalPrice: t('analytics.totalPrice'),
+    noSalesData: t('analytics.noSalesData'),
+    number: t('analytics.number'),
+    notes: t('analytics.notes'),
+  };
+};
+
+export const useModalTranslations = () => {
+  const { t } = useTranslation();
+  
+  return {
+    addPaint: t('modals.addPaint'),
+    editPaint: t('modals.editPaint'),
+    addCategory: t('modals.addCategory'),
+    editCategory: t('modals.editCategory'),
+    addSupplier: t('modals.addSupplier'),
+    editSupplier: t('modals.editSupplier'),
+    advice: t('modals.advice'),
+    name: t('modals.name'),
+    nameExample: t('modals.nameExample'),
+    category: t('modals.category'),
+    selectCategory: t('modals.selectCategory'),
+    productType: t('modals.productType'),
+    volumeProduct: t('modals.volumeProduct'),
+    pieceProduct: t('modals.pieceProduct'),
+    measuredProduct: t('modals.measuredProduct'),
+    color: t('modals.color'),
+    unit: t('modals.unit'),
+    kilogram: t('modals.kilogram'),
+    brand: t('modals.brand'),
+    brandExample: t('modals.brandExample'),
+    costPrice: t('modals.costPrice'),
+    sellingPrice: t('modals.sellingPrice'),
+    minStock: t('modals.minStock'),
+    sku: t('modals.sku'),
+    description: t('modals.description'),
+    descriptionExample: t('modals.descriptionExample'),
+    contactPerson: t('modals.contactPerson'),
+    phone: t('modals.phone'),
+    email: t('modals.email'),
+    address: t('modals.address'),
+    isActive: t('modals.isActive'),
+    saving: t('modals.saving'),
+    cancel: t('modals.cancel'),
+    save: t('modals.save'),
+    close: t('modals.close'),
+    required: t('modals.required'),
+  };
+};
